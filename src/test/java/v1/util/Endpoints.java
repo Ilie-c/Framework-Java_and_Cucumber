@@ -12,4 +12,5 @@ public class Endpoints {
 
     public final static String UPDATE = "/update";
 
+    public static final String DELETE = "/delete";
 }
