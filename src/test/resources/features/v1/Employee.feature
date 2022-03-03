@@ -23,6 +23,16 @@ Feature: Test cases for employee
     And The response should be null
     Examples:
       | statusCode | id   |
-      | 200        | 1000 |
-      | 200        | abc  |
-      | 200        | 1abc |
+      | 404        | 1000 |
+      | 404        | abc  |
+      | 404        | 1abc |
+
+  @RegresionTest
+  Scenario Outline: Get an employee with null/empty id
+    When the user requests employee with id <id>
+    Then the status code is <statusCode>
+    And The response should be null
+    Examples:
+      | statusCode | id   |
+      | 400        | Null |
+      | 400        |      |

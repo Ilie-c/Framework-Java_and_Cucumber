@@ -18,4 +18,8 @@ public class CreateStepDefinitions {
         createStepImpl.checkResponse();
     }
 
+    @And("the response should be an error")
+    public void theResponseShouldBeAnError() {
+        createStepImpl.checkNegativeResponse();
+    }
 }

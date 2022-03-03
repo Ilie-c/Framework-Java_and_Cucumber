@@ -10,7 +10,6 @@ import v1.models.update.UpdateResponse;
 import v1.util.Endpoints;
 import v1.util.World;
 
-import java.util.List;
 import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -25,7 +24,7 @@ public class UpdateStepImpl {
                 .body(updateRequest)
                 .when()
                 .put(Endpoints.UPDATE + "/" + id.toString())
-                .then().log().all().extract().response();
+                .then().extract().response();
         World.setResponse(response);
         World.setUpdateRequest(updateRequest);
     }
@@ -39,7 +38,7 @@ public class UpdateStepImpl {
                 .body(updateRequestExtend)
                 .when()
                 .put(Endpoints.UPDATE + "/" + id.toString())
-                .then().log().all().extract().response();
+                .then().extract().response();
         World.setResponse(response);
     }
 
@@ -52,7 +51,7 @@ public class UpdateStepImpl {
                 .body(updateRequestShort)
                 .when()
                 .put(Endpoints.UPDATE + "/" + id.toString())
-                .then().log().all().extract().response();
+                .then().extract().response();
         World.setResponse(response);
     }
 
@@ -74,7 +73,6 @@ public class UpdateStepImpl {
         UpdateResponse updateResponse = World.getResponse().as(UpdateResponse.class);
         assertThat(updateResponse.getData()).isEqualTo(World.getUpdateRequest());
         assertThat(updateResponse.getStatus()).isEqualTo(World.getSuccessStatus());
-//        assertThat(updateResponse.getMessage()).isEqualTo(World.getSuccessMessage());
     }
 
 

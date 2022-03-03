@@ -17,7 +17,11 @@ public class CommonStepImpl {
     public void checkStatus(int statusCode) {
         SoftAssertions softAssert = new SoftAssertions();
         softAssert.assertThat(World.getResponse().statusCode()).isEqualTo(statusCode);
-        softAssert.assertAll();
+        try {
+            softAssert.assertAll();
+        } catch (org.assertj.core.error.AssertJMultipleFailuresError e) {
+            System.out.println("Warning!  =>  "+e.toString());
+        }
     }
 
     public void verifyAppIsUp() {

@@ -35,6 +35,9 @@ public final class World {
   private static final String  successStatus = "success" ;
 
   @Getter
+  private static final String  negativeStatus = "fail" ;
+
+  @Getter
   private static final String  successMessage = "Successfully! Record has been fetched." ;
 
 }

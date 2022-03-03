@@ -7,9 +7,6 @@ import v1.models.employees.EmployeesResponse;
 import v1.util.Endpoints;
 import v1.util.World;
 
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
-import static org.assertj.core.api.Assertions.assertThat;
-
 
 public class EmployeesStepImpl {
 

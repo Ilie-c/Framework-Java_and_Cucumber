@@ -13,7 +13,6 @@ Feature: Test cases for employee
       | statusCode | id | name               | salary | age |
       | 200        | 10 | test_update_unique | 321    | 80  |
 
-
   @RegresionTest
   Scenario Outline: Update employee without every required item
     When the admin changes data for employee <id> with <name>, <salary> and <age>
